@@ -1,10 +1,12 @@
 import React from "react";
 
 export const TodoCards = props => {
-  const { item } = props.i;
+  const { item, id, completed } = props.i;
   return (
-    <div>
-      <h3>{item}</h3>
+    <div
+      onClick={() => props.dispatch({ type: "MARK_COMPLETE", payload: { id } })}
+    >
+      <h3 className={`${completed ? "completed" : ""}`}>{item}</h3>
     </div>
   );
 };

@@ -1,8 +1,6 @@
-import React, { useReducer, useState } from "react";
-import { reducer, initialState } from "../reducers/todoReducer";
+import React, { useState } from "react";
 
-export const TodoForm = () => {
-  const [itemState, dispatch] = useReducer(reducer, initialState);
+export const TodoForm = ({ dispatch }) => {
   const [newItem, setNewItem] = useState("");
 
   const handleChange = e => {
@@ -10,7 +8,7 @@ export const TodoForm = () => {
   };
 
   return (
-    <form>
+    <div>
       <input
         type="text"
         name="newItem"
@@ -22,6 +20,9 @@ export const TodoForm = () => {
       >
         ADD TO DO
       </button>
-    </form>
+      <button onClick={() => dispatch({ type: "CLEAR_COMPLETED" })}>
+        Clear Completed
+      </button>
+    </div>
   );
 };
