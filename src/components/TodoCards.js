@@ -1,10 +1,10 @@
 import React from "react";
 
 export const TodoCards = props => {
-  const { task } = props.i;
+  const { item } = props.i;
   return (
     <div>
-      <h3>{task}</h3>
+      <h3>{item}</h3>
     </div>
   );
 };
