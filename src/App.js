@@ -12,7 +12,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>REDUCERS TO DO APP </h1>
+      <header>
+        <h1>Daily ToDo</h1>
+      </header>
       <TodoForm dispatch={dispatch} />
       {itemState.map(i => (
         <TodoCards dispatch={dispatch} key={i.id} i={i} />
